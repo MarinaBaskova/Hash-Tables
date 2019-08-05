@@ -38,14 +38,21 @@ def hash(string, max):
 
 
 def hash_table_insert(hash_table, key, value):
-    pass
+    index = hash(key, hash_table.capacity)
+    pair_insert = Pair(key, value)
+    pair_stored = hash_table.storage[index]
 
-
+    if pair_stored is not None:
+        if pair_insert.key != pair_stored.key:
+            print("warning, it will overwrite old key value pair")
+    hash_table.storage[index] = pair_insert
 # '''
 # Fill this in.
 
 # If you try to remove a value that isn't there, print a warning.
 # '''
+
+
 def hash_table_remove(hash_table, key):
     pass
 
