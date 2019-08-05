@@ -15,7 +15,8 @@ class Pair:
 # '''
 class BasicHashTable:
     def __init__(self, capacity):
-        pass
+        self.capacity = capacity
+        self.storage = [None] * capacity
 
 
 # '''
@@ -23,14 +24,19 @@ class BasicHashTable:
 # Research and implement the djb2 hash function
 # '''
 def hash(string, max):
-    pass
-
+    hash = 5381
+    for char in string:
+        hash = ((hash << 5) + hash) + ord(char)
+        print(hash)
+    return (hash % max)
 
 # '''
 # Fill this in.
 
 # If you are overwriting a value with a different key, print a warning.
 # '''
+
+
 def hash_table_insert(hash_table, key, value):
     pass
 
