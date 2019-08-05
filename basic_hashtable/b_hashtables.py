@@ -54,16 +54,23 @@ def hash_table_insert(hash_table, key, value):
 
 
 def hash_table_remove(hash_table, key):
-    pass
-
+    index = hash(key, hash_table.capacity)
+    if hash_table.storage[index] is None or hash_table.storage[index].key != key:
+        print("warning, can not remove a value that isn't there")
+    hash_table.storage[index] = None
 
 # '''
 # Fill this in.
 
 # Should return None if the key is not found.
 # '''
+
+
 def hash_table_retrieve(hash_table, key):
-    pass
+    index = hash(key, hash_table.capacity)
+    if hash_table.storage[index] is not None:
+        if hash_table.storage[index].key == key:
+            return hash_table.storage[index].value
 
 
 def Testing():
