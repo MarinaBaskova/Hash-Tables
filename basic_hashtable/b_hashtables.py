@@ -71,6 +71,8 @@ def hash_table_retrieve(hash_table, key):
     if hash_table.storage[index] is not None:
         if hash_table.storage[index].key == key:
             return hash_table.storage[index].value
+    print("can not find the value with the provided key")
+    return None
 
 
 def Testing():
